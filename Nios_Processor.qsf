@@ -52,8 +52,6 @@ set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name QIP_FILE Nios2/synthesis/Nios2.qip
-set_global_assignment -name VHDL_FILE Nios_Top.vhd
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_F1 -to BUTTON[2]
 set_location_assignment PIN_G3 -to BUTTON[1]
@@ -80,14 +78,119 @@ set_location_assignment PIN_H5 -to SW[1]
 set_location_assignment PIN_J6 -to SW[0]
 set_location_assignment PIN_G21 -to CLK_50[1]
 set_location_assignment PIN_B12 -to CLK_50[0]
-set_global_assignment -name VHDL_FILE VHDL_Source/In_Progress/7Seg/seven_seg_hex_nibble.vhd
 set_location_assignment PIN_D13 -to SEVENSEG0[7]
 set_location_assignment PIN_F13 -to SEVENSEG0[6]
 set_location_assignment PIN_F12 -to SEVENSEG0[5]
 set_location_assignment PIN_G12 -to SEVENSEG0[4]
 set_location_assignment PIN_H13 -to SEVENSEG0[3]
 set_location_assignment PIN_H12 -to SEVENSEG0[2]
-set_location_assignment PIN_H11 -to SEVENSEG0[1]
+set_location_assignment PIN_F11 -to SEVENSEG0[1]
 set_location_assignment PIN_E11 -to SEVENSEG0[0]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_B15 -to SEVENSEG1[7]
+set_location_assignment PIN_A15 -to SEVENSEG1[6]
+set_location_assignment PIN_E14 -to SEVENSEG1[5]
+set_location_assignment PIN_B14 -to SEVENSEG1[4]
+set_location_assignment PIN_A14 -to SEVENSEG1[3]
+set_location_assignment PIN_C13 -to SEVENSEG1[2]
+set_location_assignment PIN_B13 -to SEVENSEG1[1]
+set_location_assignment PIN_A13 -to SEVENSEG1[0]
+set_location_assignment PIN_A18 -to SEVENSEG2[7]
+set_location_assignment PIN_F14 -to SEVENSEG2[6]
+set_location_assignment PIN_B17 -to SEVENSEG2[5]
+set_location_assignment PIN_A17 -to SEVENSEG2[4]
+set_location_assignment PIN_E15 -to SEVENSEG2[3]
+set_location_assignment PIN_B16 -to SEVENSEG2[2]
+set_location_assignment PIN_A16 -to SEVENSEG2[1]
+set_location_assignment PIN_D15 -to SEVENSEG2[0]
+set_location_assignment PIN_G16 -to SEVENSEG3[7]
+set_location_assignment PIN_G15 -to SEVENSEG3[6]
+set_location_assignment PIN_D19 -to SEVENSEG3[5]
+set_location_assignment PIN_C19 -to SEVENSEG3[4]
+set_location_assignment PIN_B19 -to SEVENSEG3[3]
+set_location_assignment PIN_A19 -to SEVENSEG3[2]
+set_location_assignment PIN_F15 -to SEVENSEG3[1]
+set_location_assignment PIN_B18 -to SEVENSEG3[0]
+set_global_assignment -name SDC_FILE Nios_Processor.out.sdc
+set_global_assignment -name QIP_FILE Nios2/synthesis/Nios2.qip
+set_global_assignment -name VHDL_FILE Nios_Top.vhd
+set_global_assignment -name VHDL_FILE VHDL_Source/In_Progress/7Seg/seven_seg_hex_nibble.vhd
 set_global_assignment -name VHDL_FILE VHDL_Source/In_Progress/7Seg/signed_disp.vhd
+set_location_assignment PIN_C8 -to sdram_addr[12]
+set_location_assignment PIN_A7 -to sdram_addr[11]
+set_location_assignment PIN_B4 -to sdram_addr[10]
+set_location_assignment PIN_B7 -to sdram_addr[9]
+set_location_assignment PIN_C7 -to sdram_addr[8]
+set_location_assignment PIN_A6 -to sdram_addr[7]
+set_location_assignment PIN_B6 -to sdram_addr[6]
+set_location_assignment PIN_C6 -to sdram_addr[5]
+set_location_assignment PIN_A5 -to sdram_addr[4]
+set_location_assignment PIN_C3 -to sdram_addr[3]
+set_location_assignment PIN_B3 -to sdram_addr[2]
+set_location_assignment PIN_A3 -to sdram_addr[1]
+set_location_assignment PIN_C4 -to sdram_addr[0]
+set_location_assignment PIN_A4 -to sdram_ba[1]
+set_location_assignment PIN_B5 -to sdram_ba[0]
+set_location_assignment PIN_G8 -to sdram_cas_n
+set_location_assignment PIN_E6 -to sdram_cke
+set_location_assignment PIN_E5 -to sdram_clk
+set_location_assignment PIN_G7 -to sdram_cs_n
+set_location_assignment PIN_F10 -to sdram_dq[15]
+set_location_assignment PIN_E10 -to sdram_dq[14]
+set_location_assignment PIN_A10 -to sdram_dq[13]
+set_location_assignment PIN_B10 -to sdram_dq[12]
+set_location_assignment PIN_C10 -to sdram_dq[11]
+set_location_assignment PIN_A9 -to sdram_dq[10]
+set_location_assignment PIN_B9 -to sdram_dq[9]
+set_location_assignment PIN_A8 -to sdram_dq[8]
+set_location_assignment PIN_F8 -to sdram_dq[7]
+set_location_assignment PIN_H9 -to sdram_dq[6]
+set_location_assignment PIN_G9 -to sdram_dq[5]
+set_location_assignment PIN_F9 -to sdram_dq[4]
+set_location_assignment PIN_E9 -to sdram_dq[3]
+set_location_assignment PIN_H10 -to sdram_dq[2]
+set_location_assignment PIN_G10 -to sdram_dq[1]
+set_location_assignment PIN_D10 -to sdram_dq[0]
+set_location_assignment PIN_E7 -to sdram_ldqm
+set_location_assignment PIN_F7 -to sdram_ras_n
+set_location_assignment PIN_B8 -to sdram_udqm
+set_location_assignment PIN_D6 -to sdram_we_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_addr[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_ba[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_ba[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_cas_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_cke
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_cs_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_dq[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_ldqm
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_ras_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_udqm
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_we_n
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
