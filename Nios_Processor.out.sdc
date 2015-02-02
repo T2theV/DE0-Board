@@ -27,16 +27,11 @@ set_false_path -to [get_ports {LED_GREEN[0] LED_GREEN[1] LED_GREEN[2] LED_GREEN[
 set_false_path -to [get_ports {altera_reserved_tdo}]
 
 #SDRAM Constraints
-create_generated_clock -name sdramclk -source u0|altpll_0|sd1|pll7|clk[0] [get_ports sdram_clk]
-set period [expr 1/50000000]
-set su 1.5
-set hold 0.8
-set maxindly [expr $period / 1 - $su]
-set minindly [expr $hold - $period / 2]
+create_generated_clock -name sdramclk -source u0|pll|sd1|pll7|clk[0] [get_ports sdram_clk]
 
-set_input_delay -clock sdramclk -max $maxindly [get_ports sdram_dq[*]]
-set_input_delay -clock sdramclk -min $minindly [get_ports sdram_dq[*]]
-set_output_delay -clock sdramclk -max $su [get_ports sdram*]
-set_output_delay -clock sdramclk -min $hold [get_ports sdram*]
+set_input_delay -clock sdramclk -max  5.4 [get_ports {sdram_dq[*]}]
+set_input_delay -clock sdramclk -min 2.7 [get_ports {sdram_dq[*]}]
+set_output_delay -clock sdramclk -max 0.8 [get_ports {sdram*}]
+set_output_delay -clock sdramclk -min -1.5 [get_ports {sdram*}]
 
 set_false_path -to [get_ports sdram_clk]
